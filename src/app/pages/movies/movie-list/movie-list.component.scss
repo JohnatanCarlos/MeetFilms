@@ -1,0 +1,25 @@
+@import 'src/app/shared/styles/style-pallets.scss';
+@import 'src/app/shared/styles/style-mixin.scss';
+
+.movie_list {
+    color: $text-color-secondary;
+
+    &_card {
+        @include center-collumn ;
+
+        img {
+            height: 250px;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    
+}
+
+.search-results {
+    height: 80vh;
+    overflow-y: scroll;
+}

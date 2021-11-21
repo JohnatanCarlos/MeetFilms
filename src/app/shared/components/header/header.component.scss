@@ -1,0 +1,21 @@
+@import 'src/app/shared/styles/style-mixin.scss';
+@import 'src/app/shared/styles/style-pallets.scss';
+
+.header {
+    @include between-center;
+    padding: 30px;
+    height: 40px;
+    border-radius: 0 0 40px 40px;
+    background-color: $bg-black;
+    color: $text-color-primary;
+
+    &_left>img {
+        height: 35px;
+        width: 300;
+    }
+
+    &_right  >*{
+        margin: 0 8px;
+        cursor: pointer;
+    }
+}

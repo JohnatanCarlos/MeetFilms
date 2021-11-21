@@ -1,0 +1,46 @@
+<div class="container mt-4">
+    <div class="row movie-form">
+        <form class="row col-8" [formGroup]="formRegister" (submit)="register()">
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Nome Filme</label>
+                <input type="text" class="form-control" id="inputName" formControlName="title" [ngClass]="{'is-invalid': fieldsRegister.title.dirty && fieldsRegister.title.errors}">
+                <div *ngIf="fieldsRegister.title.dirty && fieldsRegister.title.errors" class="invalid">
+                    <div *ngIf="fieldsRegister.title.errors.required">Nome é obrigatorio.</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="inputLacamento" class="form-label">Ano Lançamento</label>
+                <input type="text" class="form-control" id="inputLacamento" formControlName="year">
+            </div>
+            <div class="col-3">
+                <label for="inputTipo" class="form-label">Tipo</label>
+                <select id="inputTipo" class="form-select" formControlName="type">
+                    <option *ngFor="let tipo of tipos" value="{{tipo}}">{{tipo}}</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <label for="inputMdb" class="form-label">IMDB</label>
+                <input type="text" class="form-control" id="inputMdb" formControlName="imdbID" [ngClass]="{'is-invalid': fieldsRegister.imdbID.dirty && fieldsRegister.imdbID.errors}">
+                <div *ngIf="fieldsRegister.imdbID.dirty && fieldsRegister.imdbID.errors" class="invalid">
+                    <div *ngIf="fieldsRegister.imdbID.errors.required">IMDB é obrigatorio.</div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <label for="inputUrl" class="form-label">URL Imagem</label>
+                <input type="text" class="form-control" id="inputUrl" formControlName="poster">
+            </div>
+           
+            <div class="col-12">
+                <button type="submit" class="btn btn-danger mr-2">Salvar</button>
+                <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpar</button>
+            </div>
+            
+        </form>
+
+        <!-- TODO: Melhorar depois com @wall -->
+        <div class="col-4">
+            <img src="{{formRegister.value.poster}}" width="260" alt="">
+        </div>
+    </div>
+
+</div>

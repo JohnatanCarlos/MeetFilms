@@ -1,0 +1,22 @@
+@import './../../../app/shared/styles/style-pallets.scss';
+@import './../../../app/shared/styles/style-mixin.scss';
+
+.who_watching {
+    @include center-collumn;
+
+    color: $text-color-primary;
+
+    img{
+        height: 105px;
+        width: 900;
+    }
+
+    &_profile >* {
+        width: 100px;
+        height: 100px;
+        margin: 0 30px;
+        cursor: pointer;
+    }
+
+    
+}

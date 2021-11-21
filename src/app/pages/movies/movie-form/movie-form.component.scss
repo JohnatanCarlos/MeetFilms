@@ -1,0 +1,10 @@
+@import 'src/app/shared/styles/style-pallets.scss';
+
+form > * {
+    margin-bottom: 20px;
+}
+
+.movie-form {
+    color: $text-color-primary;
+}
+
